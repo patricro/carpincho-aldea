@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carpincho Aldea</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="stage" aria-label="Carpincho Aldea">
+        <canvas id="gameCanvas"></canvas>
+
+        <header class="topbar">
+          <div class="brand">
+            <span>Carpincho Aldea</span>
+            <strong id="statusText">Explorando</strong>
+          </div>
+
+          <div class="inventory" aria-label="Inventario">
+            <div>
+              <span>banano</span>
+              <strong id="bananaCount">0</strong>
+            </div>
+            <div>
+              <span>tacuara</span>
+              <strong id="bambooCount">0</strong>
+            </div>
+            <div>
+              <span>hojas</span>
+              <strong id="leafCount">0</strong>
+            </div>
+            <div>
+              <span>coca-cola</span>
+              <strong id="cokeCount">0</strong>
+            </div>
+            <div>
+              <span>semillas</span>
+              <strong id="seedCount">0</strong>
+            </div>
+          </div>
+        </header>
+
+        <nav class="travelbar" aria-label="Viajes">
+          <button class="is-active" type="button" data-scene="land">Esteros</button>
+          <button type="button" data-scene="city">Ciudad</button>
+          <button type="button" data-scene="river">Rio</button>
+        </nav>
+
+        <section class="moto-dashboard" id="motoDashboard" aria-label="Tablero de moto">
+          <div class="rpm-block">
+            <span>rpm</span>
+            <strong id="rpmValue">0</strong>
+            <div class="rpm-track">
+              <div class="rpm-fill" id="rpmFill"></div>
+            </div>
+          </div>
+          <div class="moto-readouts">
+            <div>
+              <span>marcha</span>
+              <strong id="gearValue">1</strong>
+            </div>
+            <div>
+              <span>vel</span>
+              <strong id="speedValue">0</strong>
+            </div>
+            <div>
+              <span>embrague</span>
+              <strong id="clutchValue">suelto</strong>
+            </div>
+          </div>
+        </section>
+
+        <aside class="inspector" aria-label="Interaccion">
+          <div>
+            <span class="panel-label">seleccion</span>
+            <strong id="selectedName">Nada</strong>
+            <p id="selectedDetails">Esteros</p>
+          </div>
+          <button class="primary-action" id="chewButton" type="button" disabled>Roer</button>
+          <button class="secondary-action" id="sowButton" type="button" disabled>Sembrar</button>
+          <button class="secondary-action" id="moveStructureButton" type="button" disabled>Mover</button>
+        </aside>
+
+        <nav class="buildbar" aria-label="Construccion">
+          <button type="button" data-build="refugio">
+            <strong>Refugio</strong>
+            <span>8 banano · 6 tacuara · junta 2</span>
+          </button>
+          <button type="button" data-build="secadero">
+            <strong>Secadero</strong>
+            <span>5 banano · 8 tacuara</span>
+          </button>
+          <button type="button" data-build="cerco">
+            <strong>Cerco</strong>
+            <span>2 banano · 3 tacuara</span>
+          </button>
+        </nav>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
